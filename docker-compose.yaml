@@ -2,7 +2,7 @@ version: '3'
 
 services:
     dhcpd:
-        container_name: netbootxyz
+        container_name: DHCP
         
         image: networkboot/dhcpd
         restart: unless-stopped
@@ -17,7 +17,7 @@ services:
 
 
     netbootxyz:
-        container_name: netbootxyz
+        container_name: NetBootXYZ
         
         image: linuxserver/netbootxyz
         restart: unless-stopped
