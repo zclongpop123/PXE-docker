@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+    dhcpd:
+        container_name: netbootxyz
+        
+        image: networkboot/dhcpd
+        restart: unless-stopped
+        
+        volumes:
+            - ./dhcpd/data:/data
+        
+        network_mode: 'host'
+
+        command: enp3s0
+
+
+
+    netbootxyz:
+        container_name: netbootxyz
+        
+        image: lscr.io/linuxserver/netbootxyz
+        restart: unless-stopped
+        
+    
+        volumes:
+            - /home/netbootxyz/config:/config
+            - /home/netbootxyz/assets:/assets
+        
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - MENU_VERSION=1.9.9
+            - PORT_RANGE=30000:30010
+            - SUBFOLDER=/
+          
+        ports:
+            - 3000:3000
+            - 69:69/udp
+            - 8080:80
