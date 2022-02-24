@@ -19,7 +19,7 @@ services:
     netbootxyz:
         container_name: netbootxyz
         
-        image: lscr.io/linuxserver/netbootxyz
+        image: linuxserver/netbootxyz
         restart: unless-stopped
         
     
