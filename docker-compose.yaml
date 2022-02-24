@@ -30,7 +30,6 @@ services:
         environment:
             - PUID=1000
             - PGID=1000
-            - MENU_VERSION=1.9.9
             - PORT_RANGE=30000:30010
             - SUBFOLDER=/
           
