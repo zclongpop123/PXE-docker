@@ -24,8 +24,8 @@ services:
         
     
         volumes:
-            - /home/netbootxyz/config:/config
-            - /home/netbootxyz/assets:/assets
+            - ./netbootxyz/config:/config
+            - ./netbootxyz/assets:/assets
         
         environment:
             - PUID=1000
